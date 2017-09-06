@@ -22,7 +22,7 @@ public class RecordChartStep extends Step {
 
     private String chart = "default";
     private String series = "default";
-    private Double x;
+    private Object x;
     private double y;
 
     @DataBoundConstructor
@@ -49,11 +49,11 @@ public class RecordChartStep extends Step {
     }
 
     @DataBoundSetter
-    public void setX(Double x) {
+    public void setX(Object x) {
         this.x = x;
     }
 
-    public Double getX() {
+    public Object getX() {
         return x;
     }
 
@@ -77,7 +77,7 @@ public class RecordChartStep extends Step {
 
         @Override
         protected GraphInfo run() throws Exception {
-            double x = step.getX() == null ? ((double) getContext().get(Run.class).getNumber()) : step.getX();
+            String x = step.getX() == null ? (Integer.toString(getContext().get(Run.class).getNumber())) : step.getX().toString();
 
             RunChartAction rca = getContext().get(Run.class).getAction(RunChartAction.class);
             if (rca == null) {
