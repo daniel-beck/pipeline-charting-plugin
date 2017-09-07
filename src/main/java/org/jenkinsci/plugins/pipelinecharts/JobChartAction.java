@@ -7,9 +7,7 @@ import hudson.util.Graph;
 import hudson.util.RunList;
 import org.jenkinsci.plugins.pipelinecharts.chartdata.Chart;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
